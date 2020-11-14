@@ -1,0 +1,11 @@
+
+.page-title {
+  padding: 10px 8px 0 8px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  @include font-bold();
+  font-size: 32px;
+  line-height: 1;
+  color: $color-black;
+  box-sizing: border-box;
+}

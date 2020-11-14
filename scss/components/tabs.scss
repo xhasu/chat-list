@@ -1,0 +1,79 @@
+
+.tabs {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 0 5px;
+  box-sizing: border-box;
+  .tab-item {
+    position: relative;
+    margin: 0 5px;
+    flex: 1;
+    color: $color-grey;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    span {
+      position: relative;
+      display: block;
+      padding: 8px 4px;
+      z-index: 0;
+    }
+    &.active {
+      color: $color-primary;
+      &::after {
+        opacity: 1;
+      }
+      &.leave-right,
+      &.leave-left {
+        color: $color-grey;
+      }
+      &.enter-left::after {
+        animation-name: tab-enter;
+      }
+      &.leave-left::after {
+        animation-name: tab-enter;
+        animation-direction: reverse;
+      }
+      &.enter-right::after {
+        animation-name: tab-leave;
+        animation-direction: reverse;
+      }
+      &.leave-right::after {
+        animation-name: tab-leave;
+      }
+    }
+    &::after {
+      @include absolute(null, 0, 0, 0);
+      display: block;
+      height: 2px;
+      overflow: hidden;
+      background-color: $color-primary;
+      opacity: 0;
+      animation-duration: 400ms;
+      animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+      animation-fill-mode: both;
+      transition: transform 400ms, color 300ms;
+      content: "";
+      clear: both;
+      z-index: 1;
+    }
+  }
+}
+
+@keyframes tab-enter {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes tab-leave {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

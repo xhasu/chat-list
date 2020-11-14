@@ -1,0 +1,40 @@
+
+
+.device {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+  place-items: center;
+  background: linear-gradient(120deg, $color-primary, lighten($color: $color-primary, $amount: 10%) 40%, $color-secondary);
+  box-sizing: border-box;
+}
+
+.device-topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px 0;
+  color: black;
+  background-color: white;
+  box-sizing: border-box;
+
+  .device-time {
+    font-weight: 700;
+  }
+
+  .device-group {
+    font-size: 0;
+    line-height: 1;
+  }
+
+  svg {
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+

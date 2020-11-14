@@ -1,0 +1,64 @@
+
+.nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white;
+
+  display: flex;
+  padding-top: 2px;
+
+  &-item {
+    position: relative;
+    padding: 5px;
+    flex: 1;
+    line-height: 1.4;
+    color: $color-grey;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &.active {
+      color: $color-blue;
+      svg {
+        fill: $color-blue;
+      }
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  svg {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0;
+  }
+
+  &-label {
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .notify {
+    display: inline-block;
+    @include absolute(0, null, null, 50%);
+    @include size(16px);
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: $color-secondary;
+    box-sizing: border-box;
+
+    text-align: center;
+    font-size: 10px;
+    color: white;
+  }
+}
